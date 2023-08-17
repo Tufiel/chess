@@ -1,5 +1,5 @@
 let previousPeice=null;
-let turn,eatablePeices=[];
+let turn,eatablePieces=[];
 
 //FIRST TIME TURN SELECTOR
 turnSelector();
@@ -31,24 +31,28 @@ function showMoves(p)
 	//ID without s eg s12 --> 12
 	const id = Number(p.id.slice(1,p.id.length));
     
-	console.log(eatablePeices);
+	console.log(eatablePieces);
 	//move peice
-	if(p.textContent == 'x' || eatablePeices.includes(p))
+	if(p.textContent == 'x' || eatablePieces.includes(p))
       {
 		p.textContent = previousPeice.textContent;
 		previousPeice.textContent = '';
 		moved = true;
 		switchTurn();
-		eatablePeices = [];
+		eatablePieces = [];
 		clearCross();
 		return;
 	  }
-	  
+
+	  if(p.textContent.split('').includes('B') && turn == 1)
+	  return;
+	  if(p.textContent.split('').includes('W') && turn == 2)
+	  return;
 	  clearCross();
 	 
      //eat peice
 	
-		eatablePeices = [];
+		eatablePieces = [];
 		
 		previousPeice = p;
 	   //white pawn
@@ -89,11 +93,11 @@ function showMoves(p)
 		}
 
 		//left eat
-		if( (id-1)%8 != 0 && id>8 && document.getElementById('s'+(id-9)!='' ) )//not ist column
+		if( (id-1)%8 != 0 && id>8 && document.getElementById('s'+(id-9) ).textContent!=''  )//not ist column
 		checkForEatable(p,id-9);
  
 		//right eat
-		if( id%8 != 0 && id>8 && document.getElementById('s'+(id-7)!='' ) )//not ist column
+		if( id%8 != 0 && id>8 && document.getElementById('s'+(id-7) ).textContent!=''  )//not ist column
 		checkForEatable(p,id-7);
 		
 	 }
@@ -406,7 +410,7 @@ function showMoves(p)
 				checkForEatable(p,id+9);
 		
 	  }
-	  console.log(eatablePeices);
+	  dangerForPieces();
 
 }
 
@@ -416,7 +420,7 @@ function checkForEatable(p,i)
 	let e = document.getElementById('s'+(i) );
 	if(p.textContent.split('').includes('W') && document.getElementById('s'+i).textContent.split('').includes('B')
 	|| p.textContent.split('').includes('B') && document.getElementById('s'+i).textContent.split('').includes('W'))
-	eatablePeices.push(e);
+	eatablePieces.push(e);
 }
 
 function clearCross(){
@@ -424,4 +428,20 @@ function clearCross(){
 	for(let i =1;i<65;i++)
 	if(document.getElementById('s'+i).textContent=='x')
 	document.getElementById('s'+i).textContent = '';
+}
+
+function dangerForPieces()
+{
+	let colors = [];
+	for(let i=0;i<eatablePieces.length;i++)
+	{
+     colors.push(eatablePieces[i].style.backgroundColor);
+	 eatablePieces[i].style.backgroundColor = 'red';
+	}
+
+	 setTimeout(
+		()=>{
+		for(let i=0;i<eatablePieces.length;i++)
+	    eatablePieces[i].style.backgroundColor = colors[i];
+	 },1000);
 }

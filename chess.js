@@ -44,9 +44,9 @@ function showMoves(p)
 		return;
 	  }
 
-	  if(p.textContent.split('').includes('B') && turn == 1)
+	  if(p.textContent.split('').includes('W') && turn == 1)
 	  return;
-	  if(p.textContent.split('').includes('W') && turn == 2)
+	  if(p.textContent.split('').includes('B') && turn == 2)
 	  return;
 	  clearCross();
 	 

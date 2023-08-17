@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chess</title>
+	<link rel="stylesheet" href="chess.css">
+</head>
+<body>
+    
+	<div id="chessBoard">
+		<div class="row turn" id="firstPlayer">
+        Your Turn
+		</div>
+
+		<div class="row">
+		<div class="square" id="s1" onclick="showMoves(this)">WT</div>
+		<div class="square" id="s2" onclick="showMoves(this)">WC</div>
+		<div class="square" id="s3" onclick="showMoves(this)">WH</div>
+		<div class="square" id="s4" onclick="showMoves(this)">WQ</div>
+		<div class="square" id="s5" onclick="showMoves(this)">WK</div>
+		<div class="square" id="s6" onclick="showMoves(this)">WH</div>
+		<div class="square" id="s7" onclick="showMoves(this)">WC</div>
+		<div class="square" id="s8" onclick="showMoves(this)">WT</div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s9" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s10" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s11" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s12" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s13" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s14" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s15" onclick="showMoves(this)">WP</div>
+		<div class="square" id="s16" onclick="showMoves(this)">WP</div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s17" onclick="showMoves(this)"></div>
+		<div class="square" id="s18" onclick="showMoves(this)"></div>
+		<div class="square" id="s19" onclick="showMoves(this)"></div>
+		<div class="square" id="s20" onclick="showMoves(this)"></div>
+		<div class="square" id="s21" onclick="showMoves(this)"></div>
+		<div class="square" id="s22" onclick="showMoves(this)"></div>
+		<div class="square" id="s23" onclick="showMoves(this)"></div>
+		<div class="square" id="s24" onclick="showMoves(this)"></div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s25" onclick="showMoves(this)"></div>
+		<div class="square" id="s26" onclick="showMoves(this)"></div>
+		<div class="square" id="s27" onclick="showMoves(this)"></div>
+		<div class="square" id="s28" onclick="showMoves(this)"></div>
+		<div class="square" id="s29" onclick="showMoves(this)"></div>
+		<div class="square" id="s30" onclick="showMoves(this)"></div>
+		<div class="square" id="s31" onclick="showMoves(this)"></div>
+		<div class="square" id="s32" onclick="showMoves(this)"></div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s33" onclick="showMoves(this)"></div>
+		<div class="square" id="s34" onclick="showMoves(this)"></div>
+		<div class="square" id="s35" onclick="showMoves(this)"></div>
+		<div class="square" id="s36" onclick="showMoves(this)"></div>
+		<div class="square" id="s37" onclick="showMoves(this)"></div>
+		<div class="square" id="s38" onclick="showMoves(this)"></div>
+		<div class="square" id="s39" onclick="showMoves(this)"></div>
+		<div class="square" id="s40" onclick="showMoves(this)"></div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s41" onclick="showMoves(this)"></div>
+		<div class="square" id="s42" onclick="showMoves(this)"></div>
+		<div class="square" id="s43" onclick="showMoves(this)"></div>
+		<div class="square" id="s44" onclick="showMoves(this)"></div>
+		<div class="square" id="s45" onclick="showMoves(this)"></div>
+		<div class="square" id="s46" onclick="showMoves(this)"></div>
+		<div class="square" id="s47" onclick="showMoves(this)"></div>
+		<div class="square" id="s48" onclick="showMoves(this)"></div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s49" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s50" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s51" onclick="showMoves(this)">Bp</div>
+		<div class="square" id="s52" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s53" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s54" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s55" onclick="showMoves(this)">BP</div>
+		<div class="square" id="s56" onclick="showMoves(this)">BP</div>
+	</div>
+
+	<div class="row">
+		<div class="square" id="s57" onclick="showMoves(this)">BT</div>
+		<div class="square" id="s58" onclick="showMoves(this)">BC</div>
+		<div class="square" id="s59" onclick="showMoves(this)">BH</div>
+		<div class="square" id="s60" onclick="showMoves(this)">BQ</div>
+		<div class="square" id="s61" onclick="showMoves(this)">BK</div>
+		<div class="square" id="s62" onclick="showMoves(this)">BH</div>
+		<div class="square" id="s63" onclick="showMoves(this)">BC</div>
+		<div class="square" id="s64" onclick="showMoves(this)">BT</div>
+	</div>
+		
+	<div class="row turn" id="secondPlayer">
+		Your Turn
+	</div>
+
+	</div>
+
+	<script src="chess.js"></script>
+</body>
+</html>
